@@ -28,7 +28,7 @@ jobs:
       run: dotnet build LincolnAPI --no-restore
 
     - name: Test Lincoln API
-      run: dotnet test ApiTests --no-build --verbosity normal
+      run: dotnet test ApiTest --no-build --verbosity normal
 
     - name: Restore dependencies For BeamerBlazor
       run: dotnet restore BeamerBlazor
