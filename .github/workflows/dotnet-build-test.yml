@@ -72,7 +72,7 @@ jobs:
           context: .
           file: LincolnAPI/Dockerfile
           push: true
-          tags: kilali/pim:latest-dev
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
    
