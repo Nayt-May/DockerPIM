@@ -36,13 +36,13 @@ jobs:
     - name: Build BeamerBlazor
       run: dotnet build BeamerBlazor --no-restore
 
-  build-container:
+  build-container-LincolnAPI:
     needs: build-project
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kilali/pim:$(date +%s)
+      run: docker build ./LincolnAPI --file Dockerfile --tag kilali/pim:$(date +%s)
 
    
