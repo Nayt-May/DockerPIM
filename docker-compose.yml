@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  lincolnapi:
+    image: ${DOCKER_REGISTRY-}lincolnapi
+    build:
+      context: .
+      dockerfile: LincolnAPI/Dockerfile
+
+  beamerblazor:
+    image: ${DOCKER_REGISTRY-}beamerblazor
+    build:
+      context: .
+      dockerfile: BeamerBlazor/Dockerfile
+
+  db:
+     image: postgres
+     restart: always
+     environment:
+       POSTGRES_USER: nayt
+       POSTGRES_PASSWORD: Mn@205133
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
