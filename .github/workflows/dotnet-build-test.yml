@@ -43,6 +43,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./LincolnAPI --file Dockerfile --tag kilali/pim:$(date +%s)
+      run: docker build . --file LincolnAPI/Dockerfile --tag kilali/pim:$(date +%s)
 
    
