@@ -10,7 +10,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  build-project:
 
     runs-on: ubuntu-latest
 
@@ -37,11 +37,12 @@ jobs:
       run: dotnet build BeamerBlazor --no-restore
 
   build-container:
+    needs: build-project
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kilali/PIM:$(date +%s)
+      run: docker build . --file Dockerfile --tag kilali/pim:$(date +%s)
 
    
