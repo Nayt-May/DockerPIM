@@ -52,9 +52,5 @@ jobs:
           context: .
           file: LincolnAPI/Dockerfile
           push: true
-          load: true
           tags: ${{ secrets.DOCKER_USERNAME }}/pim:latest, ${{ secrets.DOCKER_USERNAME }}/pim:${{ needs.bump-version.outputs.tags }}
-      -
-        name: Inspect
-        run: |
-          docker image inspect ${{ secrets.DOCKER_USERNAME }}/pim:${{ needs.bump-version.outputs.tags }}
+     
